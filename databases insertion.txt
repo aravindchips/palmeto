@@ -1,0 +1,15 @@
+database name : assignments 
+table name       : users 
+insert into users values('A1234','admin');
+insert into users values('V2345','venkat');
+insert into users values('C3456','chandu');
+insert into users values('D4567','dinesh');
+insert into users values('DH5678','dheeraj');
+--------------------------------------------------------------------------------------------
+table name: banking
+insert into banking values('1234','Aravind','ANDB0056789',5000,'A1234');
+insert into banking values('2345','Venkat','ANDB0056788',5000,'V2345');
+insert into banking values('3456','Chandu','ANDB0056787',5000,'C3456');
+insert into banking values('4567','Dinesh','ANDB0056786',5000,'D4567');
+insert into banking values('5678','Dheeraj','ANDB0056785',5000,'DH5678');
+------------------------------------------------------------------------------------------------

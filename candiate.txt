@@ -1,0 +1,65 @@
+
+public class Candidate {
+	
+	private String name;
+	private String gender;
+	private double expectedSalary;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public double getExpectedSalary() {
+		return expectedSalary;
+	}
+	public void setExpectedSalary(double expectedSalary) {
+		this.expectedSalary = expectedSalary;
+	}
+}
+////////////////////////
+import java.util.*;
+public class Main{
+    public static void main (String[] args) {
+        Candidate can=new Candidate();
+        try{
+        can=getCandidateDetails();
+        }
+        catch(InvalidSalaryException e){
+            System.out.println(e.getMessage());
+        }
+       
+        }
+    public static Candidate getCandidateDetails() throws InvalidSalaryException{
+        Scanner sc=new Scanner(System.in);
+        Candidate c=new Candidate();
+        System.out.println("Enter the candidate Details");
+        System.out.println("Name");
+        String name=sc.next();
+        System.out.println("Gender");
+        String gen=sc.next();
+        System.out.println("Expected Salary");
+        double sal=sc.nextDouble();
+        c.setName(name);
+        c.setGender(gen);
+        c.setExpectedSalary(sal);
+        if(sal<10000){
+            throw new InvalidSalaryException("Registration Failed. Salary cannot be less than 10000.");
+        }
+        else{
+            System.out.println("Registration Successful");
+        }
+        return c;
+    }
+}//////////////////////
+public class InvalidSalaryException extends Exception{
+    public InvalidSalaryException(String str){
+        super(str);
+    }
+}
